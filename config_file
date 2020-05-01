@@ -1,0 +1,5 @@
+{
+    "ALPHABET_SIZE": 4,
+    "DECODER_DATABASE_PATH": "D:\\Documentos\\GENERALES\\sistema encriptacion\\Programas_ver2\\me_decoder\\decoder_database.sqlite",
+    "USERS_DATABASE_PATH": "D:\\Documentos\\GENERALES\\sistema encriptacion\\Programas_ver2\\me_sender_creator\\users_database.sqlite"
+}
