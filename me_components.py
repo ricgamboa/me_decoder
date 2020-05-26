@@ -64,10 +64,10 @@ class Icons:
 class PositionList:
     # PositionList is a list with possible positions of the icons, the user must choose a cell with the position
     def __init__(self, list_size, num_positions):
-        self.list = []
         trivial = True
 
         while trivial:
+            self.list = []
             for i in range(list_size):
                 self.list.append(secrets.randbelow(num_positions))
             trivial = self.is_trivial(range(num_positions))
