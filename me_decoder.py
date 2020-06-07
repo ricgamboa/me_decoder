@@ -11,6 +11,7 @@ import me_components
 class QuestionDB(me_components.Question):
     # Add method to save the question information in the database
     # Must be replaced with a secure connection to database
+
     def save_info(self):
         icons_json = json.dumps([icons.collection for icons in self.icons_set])
         pos_list_json = json.dumps([pos_list.list for pos_list in self.pos_list_set])
@@ -53,12 +54,6 @@ def translate(encryp_answer, alph_index_list, alphabet, letters):
 def get_user(required_id):
     # Find user in database and convert to User class
     # This method must be replaced with secure communication with database. Manages very secret information
-
-    sender_id = 0
-    sender_name = ''
-    sender_icons = []
-    sender_cell = 0
-    user_found = False
 
     config_file_path = Path.cwd().joinpath("config_file")
     with open(config_file_path, "r") as config:
@@ -110,7 +105,7 @@ def save_answer(answer):
                      "question_id INTEGER NOT NULL,"
                       "UNIQUE (user_id, question_id))")
     cursor.execute("INSERT OR REPLACE INTO answer (user_id,answer_coded,question_id) VALUES (?,?,?)",
-                   (answer["user_id"], json.dumps(answer["answer"]), answer["question_id"]))
+                   (answer["user_id"], answer["answer"], answer["question_id"]))
     connection.commit()
     cursor.close()
 

@@ -3,6 +3,7 @@
 # request the decryption of the answer
 
 import flask
+import json
 from flask import request, jsonify
 
 import me_decoder
